@@ -6,16 +6,16 @@
 PORT=8080
 
 build:
-	docker build -t natay/pavian .
+	docker build -t florianbw/pavian .
 
 run:
-	docker run --rm -p $(PORT):80 natay/pavian
+	docker run --rm -p $(PORT):80 florianbw/pavian
 
 push:
 	docker push natay/pavian
 
 inspect:
-	docker run --rm -i -t --entrypoint /bin/bash -p $(PORT):80 natay/pavian
+	docker run --rm -i -t --entrypoint /bin/bash -p $(PORT):80 florianbw/pavian
 
 # vim:ft=make
 #

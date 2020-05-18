@@ -3,7 +3,7 @@
 # fbreitwieser, 2016-10-20 11:54
 #
 
-PORT=5000
+PORT=8080
 
 build:
 	docker build -t florianbw/pavian .

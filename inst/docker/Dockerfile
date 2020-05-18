@@ -26,7 +26,7 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
 
 RUN R -e "options(repos = c(CRAN = 'http://cran.rstudio.com')); install.packages(c('remotes'));"
 RUN R -e "source('https://bioconductor.org/biocLite.R'); biocLite('Rsamtools')"
-RUN R -e "remotes::install_github('fbreitwieser/pavian')"
+RUN R -e "remotes::install_github('natay/pavian')"
 
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 RUN rm -rf /srv/shiny-server/*

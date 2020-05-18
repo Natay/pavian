@@ -9,10 +9,10 @@ build:
 	docker build -t florianbw/pavian .
 
 run:
-	docker run --rm -p $(PORT):80 florianbw/pavian
+	docker run --rm -p $(PORT):80
 
 push:
-	docker push natay/pavian
+	docker push florianbw/pavian
 
 inspect:
 	docker run --rm -i -t --entrypoint /bin/bash -p $(PORT):80 florianbw/pavian

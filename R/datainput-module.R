@@ -99,17 +99,17 @@ dataInputModuleUI <- function(id,
         width = 12,
         title = "Data Source",
         selected = start_with,
+        uploadFilePanel(ns),
         serverDataPanel(ns),
-        uploadFilePanel(ns)
-        #exampleDataPanel(ns)
+        exampleDataPanel(ns)
       )
     } else {
       shinydashboard::tabBox(
         width = 12,
         title = "Data Source",
         selected = start_with,
-        uploadFilePanel(ns)
-        #exampleDataPanel(ns)
+        uploadFilePanel(ns),
+        exampleDataPanel(ns)
       )
     }
   },
@@ -140,12 +140,12 @@ dataInputModule <- function(input, output, session,
                             load_server_directory = getOption("pavian.load_server_directory", default = FALSE),
                             load_example_data = getOption("pavian.load_example_data", default = FALSE),
                             pavian_options = NULL) {
-  
+
   sample_sets <- reactiveValues(val=NULL, selected=NULL) # val is the list of all sample sets
   sample_sets_selected <- NULL # selected is just used to initialize the radioButtons in the module
-  
+
   ns <- session$ns
-  
+
   ## Save and retrieve recently used directories
   recently_used_dirs <- reactiveValues(val = NULL)
   recently_used_dir_user_config <- NULL
@@ -164,7 +164,7 @@ dataInputModule <- function(input, output, session,
       shinyWidgets::updateSearchInput(session, "search_data_dir", value=pavian_options$server_dir)
     }, error = message)
   })
-  
+
   #shinyFiles::shinyDirChoose(input, ns('search_data_dir'), roots = server_dirs, filetypes = c(""))
   
   read_error_msg <- reactiveValues(val_pos = NULL, val_neg = NULL)

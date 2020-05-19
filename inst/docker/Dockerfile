@@ -32,8 +32,12 @@ make install
 
 RUN R -e "options(repos = c(CRAN = 'http://cran.rstudio.com')); install.packages(c('devtools'));"
 RUN R -e "source('https://bioconductor.org/biocLite.R'); biocLite('Rsamtools')"
-RUN R -e "install.packages('devtools'); devtools::install_github('hrbrmstr/dtupdate'); install.packages('rappdirs'); devtools::install_github('natay/pavian')"
+RUN R -e "install.packages('devtools'); devtools::install_github('hrbrmstr/dtupdate'); install.packages('rappdirs');"
+RUN mkdir /export/
 
+ARG INCUBATOR_VER=unknown
+
+RUN R -e "devtools::install_github('natay/pavian', upgrade=c('always'))"
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 RUN rm -f /srv/shiny-server/*
 RUN R -e "sapply(list.files(system.file('shinyapp',package='pavian'),full.names=TRUE),file.copy,to='/srv/shiny-server/',recursive=TRUE)"

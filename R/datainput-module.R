@@ -22,7 +22,7 @@ serverDataPanel <- function(ns) {
     div(style="max-height:400px; overflow-y: scroll",
       shinyFileTree::shinyFileTreeOutput(ns('file_tree'))
     ),
-    shinyjs::hidden(actionButton(ns("btn_read_tree_dirs"), "Read selected directories")),
+    actionButton(ns("btn_read_tree_dirs"), "Read selected directories"),
     uiOutput(ns('rud'))
   )
 }
@@ -115,8 +115,8 @@ dataInputModuleUI <- function(id,
         width = 12,
         title = "Data Source",
         selected = start_with,
-        serverDataPanel(ns),
-        uploadFilePanel(ns)
+        serverDataPanel(ns)
+        #uploadFilePanel(ns)
         #exampleDataPanel(ns)
       )
     } else {
@@ -279,8 +279,12 @@ dataInputModule <- function(input, output, session,
 
   file_tree_dir <- reactiveValues(val = NULL)
 
-  #observeEvent(input$search_data_dir, {
-  #})
+  observeEvent(input$btn_read_tree_dirs, {
+        read_server_directory(
+        system.file("export", "/", package = "base"),
+        include_base_dir = TRUE
+      )
+  })
   
   output$file_tree <- shinyFileTree::renderShinyFileTree({
     data_dir <- file_tree_dir$val

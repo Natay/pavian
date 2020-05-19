@@ -74,7 +74,7 @@ uploadFilePanel <- function(ns) {
 #' @import shinydashboard
 #' @import rhandsontable
 dataInputModuleUI <- function(id,
-                              server_access = getOption("pavian.server_access", default = FALSE),
+                              server_access = getOption("pavian.server_access", default = TRUE),
                               start_with = getOption("pavian.start_data_input_with", "Upload files")) {
   ns <- NS(id)
   

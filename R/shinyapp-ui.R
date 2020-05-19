@@ -15,7 +15,7 @@ dashboardUI <- function(request) {
                                 tags$li(class = "dropdown",
                                         tags$a(href="#",
                                                #target="_blank",
-                                               style = "font-size: 2000px;",
+                                               style = "font-size: 20px; color:red",
                                                "Pavian metagenomics data explorer")
                                 ),
                                 #tags$li(class = "dropdown",

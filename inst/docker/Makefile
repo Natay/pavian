@@ -9,7 +9,7 @@ build:
 	docker build -t florianbw/pavian .
 
 run:
-	docker run --rm -p $(PORT):80
+	docker run --rm -p $(PORT):80 florianbw/pavian
 
 push:
 	docker push florianbw/pavian

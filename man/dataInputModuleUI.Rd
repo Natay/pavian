@@ -13,7 +13,7 @@ dataInputModuleUI(id, server_access = getOption("pavian.server_access",
 
 \item{server_access}{Whether to allow access to server directories.}
 
-\item{start_with}{One of 'Example data', 'Upload files', and 'Use data on server' (if server_access is TRUE).}
+\item{start_with}{One of 'Example data', 'Upload files', and 'Use results from recipes' (if server_access is TRUE).}
 }
 \value{
 Shiny UI elements

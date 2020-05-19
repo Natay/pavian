@@ -6,7 +6,7 @@ library(shinyFileTree)
 
 serverDataPanel <- function(ns) {
   tabPanel(
-    "Use data on server",
+    "Use results from recipes",
     id = "server_dir",
     " Select a directory in the file browser and press 'Read selected directories' to load it into Pavian.",
     " You may also use wildcards to directly upload specified paths.",
@@ -75,7 +75,7 @@ uploadFilePanel <- function(ns) {
 #' @import rhandsontable
 dataInputModuleUI <- function(id,
                               server_access = getOption("pavian.server_access", default = TRUE),
-                              start_with = getOption("pavian.start_data_input_with", "Upload files")) {
+                              start_with = getOption("pavian.start_data_input_with", "Use results from recipes")) {
   ns <- NS(id)
   
   shiny::tagList(box(

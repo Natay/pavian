@@ -93,6 +93,21 @@ dataInputModuleUI <- function(id,
       </p>"
     )
   ),
+    shiny::tagList(box(
+    width = 12,
+    #collapsible = TRUE,
+    #collapse = TRUE,
+    HTML(
+      "
+      <p>
+      Pavian is a tool for interactive analysis of metagenomics classification results.
+    Read more about it in the <a target='_blank' href='http://biorxiv.org/content/early/2016/10/31/084715.full.pdf+html'>Preprint</a> or its <a target='blank' href='https://raw.githubusercontent.com/fbreitwieser/pavian/blob/master/inst/doc/pavian-walkthrough.pdf'>vignette</a>. It's built on <a href='https://www.r-project.org/' target='_blank'>R</a> and <a target='_blank' href='http://shiny.rstudio.com/'>Shiny</a>, and supports <a target='_blank' href='https://ccb.jhu.edu/software/kraken/'>Kraken</a>, <a target='_blank' href='https://github.com/infphilo/centrifuge'>Centrifuge</a> and <a target='_blank' href='https://bitbucket.org/biobakery/metaphlan2'>MetaPhlAn</a> report files. Please note that currently the default Centrifuge report format is not supported. To generate a compatible report, use the script centrifuge-kreport that is distributed with Centrifuge.
+      </p>
+      <p>
+      For help and more documenation please go to <a target='_blank' href='https://github.com/fbreitwieser/pavian'>https://github.com/fbreitwieser/pavian</a>.
+      </p>"
+    )
+  ),
   {
     if (server_access) {
       shinydashboard::tabBox(

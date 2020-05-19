@@ -15,7 +15,7 @@ dashboardUI <- function(request) {
                                 tags$li(class = "dropdown",
                                         tags$a(href="#",
                                                #target="_blank",
-                                               style = "font-size: 20px; color:red",
+                                               style = "font-size: 20px; color:greed",
                                                "Bioinformatics Recipes + Pavian metagenomics data explorer")
                                 ),
                                 #tags$li(class = "dropdown",
@@ -83,7 +83,7 @@ dashboardUI <- function(request) {
                     )),
                   div(class="hide_when_sidebar_collapsed", 
                   br(),
-                  tags$p(class="sidebartext", style="padding-left: 10px;color: #b8c7ce; ",format(Sys.Date(), "@fbreitw, %Y"))
+                  tags$p(class="sidebartext", style="padding-left: 10px;color: #b8c7ce; ",format(Sys.Date(), "@natay, %Y"))
                   )
                 ),
                 dashboardBody(

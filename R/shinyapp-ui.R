@@ -25,7 +25,7 @@ dashboardUI <- function(request) {
                                 #tags$li(class = "dropdown",
                                 #          tags$a(href="http://twitter.com/share?url=http://ccb.jhu.edu/software/pavian&amp;text=Explore metagenomics data with #pavian ", target="_blank", tags$img(icon('twitter')))),
                                 tags$li(class = "dropdown",
-                                        tags$a(href="http://github.com/fbreitwieser/pavian", target="_blank", tags$img(icon('github'))))
+                                        tags$a(href="http://github.com/Natay/pavian", target="_blank", tags$img(icon('github'))))
                 ),
                 dashboardSidebar(
                   div(class="hide_when_sidebar_collapsed",

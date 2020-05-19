@@ -99,17 +99,17 @@ dataInputModuleUI <- function(id,
         width = 12,
         title = "Data Source",
         selected = start_with,
-        uploadFilePanel(ns),
         serverDataPanel(ns),
-        exampleDataPanel(ns)
+        uploadFilePanel(ns)
+        #exampleDataPanel(ns)
       )
     } else {
       shinydashboard::tabBox(
         width = 12,
         title = "Data Source",
         selected = start_with,
-        uploadFilePanel(ns),
-        exampleDataPanel(ns)
+        uploadFilePanel(ns)
+        #exampleDataPanel(ns)
       )
     }
   },

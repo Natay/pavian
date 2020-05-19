@@ -16,7 +16,7 @@ dashboardUI <- function(request) {
                                         tags$a(href="#",
                                                #target="_blank",
                                                style = "font-size: 20px; color:green",
-                                               "Pavian metagenomics data explorer")
+                                               "Bioinformatics Recipes + Pavian metagenomics data explorer")
                                 ),
                                 #tags$li(class = "dropdown",
                                 #        tags$a(href="https://ccb.jhu.edu", target="_blank",

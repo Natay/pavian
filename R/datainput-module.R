@@ -93,23 +93,39 @@ dataInputModuleUI <- function(id,
       </p>"
     )
   ),
+    box(
+    width = 12,
+    #collapsible = TRUE,
+    #collapse = TRUE,
+    HTML(
+      "
+      <p>
+ A 'bioinformatics recipe' is a collection of commands used to perform a bioinformatics data analysis task. A recipe can be thought
+                        of as a <em>bioinformatics workflow</em> or a <em>bioinformatics pipeline</em>.
+      </p>
+      <p>Read more about it here <a target='_blank' href='https://www.bioinformatics.recipes/'>https://www.bioinformatics.recipes/</a>.</p>
+      <p>
+      For help and more documenation please go to <a target='_blank' href='https://github.com/ialbert/biostar-central'>https://github.com/ialbert/biostar-central</a>.
+      </p>"
+    )
+  ),
   {
     if (server_access) {
       shinydashboard::tabBox(
         width = 12,
         title = "Data Source",
         selected = start_with,
-        uploadFilePanel(ns),
         serverDataPanel(ns),
-        exampleDataPanel(ns)
+        uploadFilePanel(ns)
+        #exampleDataPanel(ns)
       )
     } else {
       shinydashboard::tabBox(
         width = 12,
         title = "Data Source",
         selected = start_with,
-        uploadFilePanel(ns),
-        exampleDataPanel(ns)
+        uploadFilePanel(ns)
+        #exampleDataPanel(ns)
       )
     }
   },
